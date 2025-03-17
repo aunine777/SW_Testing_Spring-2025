@@ -64,8 +64,8 @@ def test_classify_bmi(bmi, expected):
     (96, 5, 7, "Underweight"),  # Just below normal
     (118, 5, 7, "Normal weight"),  # Exact BMI 18.5
     (130, 5, 7, "Normal weight"),  # Just below overweight
-    (160, 5, 7, "Overweight"),      # Exact BMI 25.0
-    (156, 5, 7, "Overweight"),  # Just below obese
+    (156, 5, 7, "Overweight"), # Exact BMI 25.0
+    (160, 5, 7, "Overweight"),      # Just below obese 
     (192, 5, 7, "Obese"),           # Exact BMI 30.0
 ])
 def test_calculate_bmi(weight, feet, inches, expected):
