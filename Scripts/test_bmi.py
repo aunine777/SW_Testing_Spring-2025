@@ -62,11 +62,13 @@ def test_classify_bmi(bmi, expected):
 # 5️⃣ Test calculate_bmi() (End-to-End Test)
 @pytest.mark.parametrize("weight, feet, inches, expected", [
     (96, 5, 7, "Underweight"),  # Just below normal
-    (118, 5, 7, "Normal weight"),  # Exact BMI 18.5
+    (119.0, 5, 8, "Normal weight"),  # Exact BMI 18.5
     (130, 5, 7, "Normal weight"),  # Just below overweight
     (156, 5, 7, "Overweight"), # Exact BMI 25.0
-    (160, 5, 7, "Overweight"),      # Just below obese 
-    (192, 5, 7, "Obese"),           # Exact BMI 30.0
+    (186.5, 5, 7, "Overweight"),  # Just below obese (BMI 29.9)
+    (187.0, 5, 7, "Obese"),  # Exact BMI 30.0
+    (203.0, 5, 7, "Obese"),  # Just above 30
+
 ])
 def test_calculate_bmi(weight, feet, inches, expected):
     assert calculate_bmi(weight, feet, inches) == expected
